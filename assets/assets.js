@@ -130,6 +130,8 @@ export const HomeIcon = () => (
   </svg>
 );
 
+
+// PRODUCTS TO SELL
 export const productsDummyData = [
   {
     "_id": "67a1f4e43f34a77b6dde9144",
@@ -276,6 +278,7 @@ export const productsDummyData = [
   }
 ]
 
+// USER INFORMATION
 export const userDummyData = {
   "_id": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
   "name": "GreatStack",
@@ -286,7 +289,7 @@ export const userDummyData = {
   },
   "__v": 0
 }
-
+// ORDERS 
 export const orderDummyData = [
   {
     "_id": "67a20934b3db72db5cc77b2b",
@@ -413,6 +416,7 @@ export const orderDummyData = [
   }
 ]
 
+// USER ADDRESS
 export const addressDummyData = [
   {
     "_id": "67a1e4233f34a77b6dde9055",
