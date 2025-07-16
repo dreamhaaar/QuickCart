@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { assets } from '@/assets/assets';
 import Image from 'next/image';
 import { useAppContext } from '@/context/AppContext';
-import { useUser, useClerk } from "@clerk/nextjs"; // ✅ added useClerk
+import { useUser, useClerk } from "@clerk/nextjs";
 import toast, { Toaster } from "react-hot-toast";
 
 const ProductCard = ({ product }) => {
   const { currency, router } = useAppContext();
   const { user } = useUser();
-  const { openSignIn } = useClerk(); // ✅ use Clerk's openSignIn
+  const { openSignIn } = useClerk();
+
+  const [shouldPromptSignIn, setShouldPromptSignIn] = useState(false);
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
 
     if (!user) {
       toast.error("Please sign in to add items to your cart.");
-      setTimeout(() => {
-        openSignIn(); // ✅ use Clerk modal instead of route
-      }, 1000);
+      setShouldPromptSignIn(true); // trigger modal after toast
       return;
     }
 
@@ -25,10 +25,21 @@ const ProductCard = ({ product }) => {
     console.log("Add to cart:", product.name);
   };
 
+  // ✅ Modal shows AFTER toast (works better on mobile)
+  useEffect(() => {
+    if (shouldPromptSignIn) {
+      const timer = setTimeout(() => {
+        openSignIn();
+        setShouldPromptSignIn(false); // reset
+      }, 1500); // 1.5s delay for toast to show
+      return () => clearTimeout(timer);
+    }
+  }, [shouldPromptSignIn, openSignIn]);
+
   return (
     <div
       onClick={() => {
-        router.push("/product/" + product._id);
+        router.push('/product/' + product._id);
         scrollTo(0, 0);
       }}
       className="flex flex-col items-start gap-0.5 max-w-[200px] w-full cursor-pointer"
