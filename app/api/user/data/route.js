@@ -8,7 +8,10 @@ export async function GET(request) {
         const { userId } = getAuth(request)
        
         await connectDB()
-        const user = await User.findById(userId)
+            const user = await User.findById("user_2zuzR9yjWzvFcVEm0m26lVsSyOy");
+    console.log("✅ Found user:", user);
+        
+
 
         if (!user){
             return NextResponse.json( { success: false, message: "User Not Found "} )

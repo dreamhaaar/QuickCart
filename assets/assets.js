@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import logo from "./logo1.png";
 import search_icon from "./search_icon.svg";
 import user_icon from "./user_icon.svg";
 import cart_icon from "./cart_icon.svg";
@@ -46,6 +46,8 @@ import product_details_page_apple_earphone_image2 from "./product_details_page_a
 import product_details_page_apple_earphone_image3 from "./product_details_page_apple_earphone_image3.png";
 import product_details_page_apple_earphone_image4 from "./product_details_page_apple_earphone_image4.png";
 import product_details_page_apple_earphone_image5 from "./product_details_page_apple_earphone_image5.png";
+import voucher from "./voucher.png";
+import sales from "./sales.png";
 
 export const assets = {
   logo,
@@ -95,7 +97,8 @@ export const assets = {
   product_details_page_apple_earphone_image3,
   product_details_page_apple_earphone_image4,
   product_details_page_apple_earphone_image5,
-  checkmark
+  checkmark,
+  voucher, sales
 };
 
 export const BagIcon = () => {
@@ -421,7 +424,7 @@ export const addressDummyData = [
   {
     "_id": "67a1e4233f34a77b6dde9055",
     "userId": "user_2sZFHS1UIIysJyDVzCpQhUhTIhw",
-    "fullName": "GreatStack",
+    "fullName": "Andrea Mhar De Leon",
     "phoneNumber": "0123456789",
     "pincode": 654321,
     "area": "Main Road , 123 Street, G Block",

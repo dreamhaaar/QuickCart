@@ -87,7 +87,7 @@ const OrderSummary = () => {
               placeholder="Enter promo code"
               className="flex-grow w-full outline-none p-2.5 text-gray-600 border"
             />
-            <button className="bg-orange-600 text-white px-9 py-2 hover:bg-orange-700">
+            <button className="bg-green-600 text-white px-9 py-2 hover:bg-green-700">
               Apply
             </button>
           </div>
@@ -104,18 +104,14 @@ const OrderSummary = () => {
             <p className="text-gray-600">Shipping Fee</p>
             <p className="font-medium text-gray-800">Free</p>
           </div>
-          <div className="flex justify-between">
-            <p className="text-gray-600">Tax (2%)</p>
-            <p className="font-medium text-gray-800">{currency}{Math.floor(getCartAmount() * 0.02)}</p>
-          </div>
           <div className="flex justify-between text-lg md:text-xl font-medium border-t pt-3">
             <p>Total</p>
-            <p>{currency}{getCartAmount() + Math.floor(getCartAmount() * 0.02)}</p>
+            <p>{currency}{getCartAmount()}</p>
           </div>
         </div>
       </div>
 
-      <button onClick={createOrder} className="w-full bg-orange-600 text-white py-3 mt-5 hover:bg-orange-700">
+      <button onClick={createOrder} className="w-full bg-green-600 text-white py-3 mt-5 hover:bg-green-700">
         Place Order
       </button>
     </div>

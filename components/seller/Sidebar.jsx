@@ -10,6 +10,9 @@ const SideBar = () => {
         { name: 'Add Product', path: '/seller', icon: assets.add_icon },
         { name: 'Product List', path: '/seller/product-list', icon: assets.product_list_icon },
         { name: 'Orders', path: '/seller/orders', icon: assets.order_icon },
+        { name: 'Vouchers', path: '/seller/vouchers', icon: assets.voucher },
+        { name: 'Voucher Statistics', path: '/seller/vouchers/stats', icon: assets.sales }
+        
     ];
 
     return (
@@ -23,7 +26,7 @@ const SideBar = () => {
                         <div
                             className={
                                 `flex items-center py-3 px-4 gap-3 ${isActive
-                                    ? "border-r-4 md:border-r-[6px] bg-orange-600/10 border-orange-500/90"
+                                    ? "border-r-4 md:border-r-[6px] bg-orange-600/10 border-green-500/90"
                                     : "hover:bg-gray-100/90 border-white"
                                 }`
                             }
